@@ -16,7 +16,27 @@ class MyTranscriptionPipeline {
         return this.instance;
     }
 }
+// Class for managing the transcription pipeline
+// class MyTranscriptionPipeline {
+//     static task = 'automatic-speech-recognition'; // Define the task type for automatic speech recognition
+//     static model = 'openai/whisper-tiny.en'; // Define the model to be used
+//     static instance = null; // Singleton instance
 
+//     // Method to get an instance of the transcription pipeline
+//     static async getInstance(progress_callback = null) {
+//         if (this.instance === null) {
+//             try {
+//                 // Ensure that the model is passed correctly
+//                 this.instance = await pipeline(this.task, this.model, { progress_callback });
+//             } catch (error) {
+//                 console.error('Error initializing pipeline:', error.message);
+//                 throw error; // Rethrow the error after logging
+//             }
+//         }
+
+//         return this.instance;
+//     }
+// }
 // Event listener for messages received by the worker
 self.addEventListener('message', async (event) => {
     const { type, audio } = event.data;
